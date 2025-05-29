@@ -1,0 +1,41 @@
+.image-upload-container {
+  transition: all 0.3s ease;
+}
+
+.image-preview {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.image-preview:hover {
+  opacity: 0.9;
+}
+
+.image-preview::after {
+  content: "Haz clic para cambiar la imagen";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px;
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-preview:hover::after {
+  opacity: 1;
+}
+
+.btn-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.btn-hover-effect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}

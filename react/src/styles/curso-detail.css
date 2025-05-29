@@ -1,0 +1,262 @@
+/* Estilos generales para la página de detalle de curso */
+.curso-detail-container {
+  margin-top: 2rem;
+}
+
+.curso-detail-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.curso-detail-card:hover {
+  transform: translateY(-5px);
+}
+
+.curso-detail-image-container {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.curso-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.curso-detail-badges {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+.curso-detail-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.curso-detail-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.curso-detail-instructor {
+  font-size: 1rem;
+  color: #666;
+}
+
+.curso-detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+.curso-detail-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.curso-detail-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.curso-detail-list li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.sticky-card {
+  position: sticky;
+  top: 100px;
+}
+
+.details-list .list-group-item {
+  border-left: none;
+  border-right: none;
+}
+
+.price-tag {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.level-badge {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.inscripcion-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.info-card {
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.requisitos-list .list-group-item {
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.requisitos-list .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.testimonials-card {
+  margin-top: 2rem;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.testimonial {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.testimonial-content {
+  flex: 1;
+}
+
+.testimonial-content h5 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.testimonial-stars {
+  color: #ffc107;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #666;
+}
+
+.add-review-btn {
+  font-weight: 500;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Estilos para los modales */
+.inscripcion-modal .modal-content,
+.resena-modal .modal-content {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.success-checkmark {
+  margin: 1rem auto;
+  font-size: 3rem;
+  color: #28a745;
+}
+
+/* Estilos para el sistema de calificación con estrellas */
+.star-rating-input {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.star-rating-input i {
+  cursor: pointer;
+  color: #e0e0e0;
+  transition: color 0.2s ease;
+}
+
+.star-rating-input i.active,
+.star-rating-input i:hover,
+.star-rating-input i:hover ~ i {
+  color: #ffc107;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .curso-detail-image-container {
+    height: 200px;
+  }
+
+  .curso-detail-title {
+    font-size: 1.5rem;
+  }
+
+  .testimonial {
+    flex-direction: column;
+  }
+
+  .testimonial-avatar {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Animaciones */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.spinner-large {
+  width: 3rem;
+  height: 3rem;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error-alert {
+  border-radius: 10px;
+  padding: 1.5rem;
+}

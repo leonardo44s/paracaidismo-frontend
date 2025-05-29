@@ -1,0 +1,207 @@
+/* Estilos generales */
+.mis-resenas-container {
+  padding-top: 2rem;
+}
+
+/* Tarjeta principal */
+.resenas-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.resenas-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Encabezado */
+.card-header {
+  padding: 20px;
+  background-color: #007bff;
+  color: white;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Tabla de reseñas */
+.resenas-table {
+  margin-bottom: 0;
+}
+
+.resenas-table th {
+  font-weight: 600;
+  color: #495057;
+  border-top: none;
+  padding: 15px 10px;
+}
+
+.resenas-table td {
+  vertical-align: middle;
+  padding: 15px 10px;
+}
+
+/* Estrellas de calificación */
+.rating-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.rating-stars i {
+  font-size: 1rem;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* Botones de acción */
+.action-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal de confirmación */
+.selected-review {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+/* Estrellas para input */
+.star-rating-input {
+  display: flex;
+  gap: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.star-rating-input i {
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+.star-rating-input i.active {
+  color: #ffc107;
+}
+
+/* Estado de reseña */
+.badge {
+  padding: 6px 10px;
+  font-weight: 500;
+  border-radius: 50px;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+}
+
+/* Mensaje de no reseñas */
+.no-reviews-message {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.no-reviews-message i {
+  font-size: 4rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.no-reviews-message h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.no-reviews-message p {
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Tarjetas de reseña */
+.resena-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.resena-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.resena-titulo {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.resena-calificacion {
+  margin-bottom: 10px;
+}
+
+.resena-contenido {
+  color: #495057;
+  margin-bottom: 0;
+}
+
+.resena-fecha {
+  font-size: 0.85rem;
+}
+
+.resena-delete-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .resenas-table {
+    font-size: 0.9rem;
+  }
+
+  .action-button {
+    width: 28px;
+    height: 28px;
+  }
+}

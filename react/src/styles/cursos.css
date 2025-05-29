@@ -1,0 +1,277 @@
+/* Estilos generales */
+.cursos-container {
+  animation: fadeIn 0.5s ease-out;
+  padding-top: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Título con gradiente */
+.text-gradient {
+  background: linear-gradient(90deg, #0062cc, #007bff, #0056b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Contenedor de búsqueda y filtros */
+.search-filter-container {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.search-filter-container:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-input .form-control {
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #ced4da;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.search-input .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+}
+
+.filter-select {
+  height: 48px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 0 15px;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+}
+
+/* Botón de crear curso */
+.create-button {
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+.create-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Tarjetas de cursos */
+.curso-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.curso-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.curso-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px; /* Altura fija para todas las imágenes */
+}
+
+.curso-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.curso-card:hover .curso-image {
+  transform: scale(1.1);
+}
+
+.curso-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.curso-card:hover .curso-overlay {
+  opacity: 1;
+}
+
+.curso-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.curso-badge .badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.curso-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #343a40;
+  font-size: 1.25rem;
+  height: 2.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.curso-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.curso-description {
+  color: #495057;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  flex-grow: 1;
+  min-height: 3rem;
+  max-height: 4.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.curso-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.curso-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+/* Contenedor de CTA */
+.cta-container {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+}
+
+.cta-container .btn {
+  background-color: white;
+  color: #007bff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-container .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para el spinner de carga */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.spinner-large {
+  width: 4rem;
+  height: 4rem;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-top: 1rem;
+}
+
+/* Alerta de error */
+.error-alert {
+  border-left: 5px solid #dc3545;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Alerta de no resultados */
+.no-results {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #e7f5ff;
+  border-color: #b8daff;
+  color: #004085;
+}
+
+/* Botón para limpiar búsqueda */
+.clear-button {
+  background: transparent;
+  border-color: #ced4da;
+  color: #6c757d;
+}
+
+.clear-button:hover {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .curso-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .curso-footer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .curso-price {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #007bff;
+  --primary-dark: #0056b3;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 56px; /* Para compensar la navbar fija */
+  background-color: #f8f9fa;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Estilos generales */
+.section-title {
+  position: relative;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Animaciones y efectos */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Efectos para tarjetas */
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Efectos para botones */
+.btn {
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.btn-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.btn-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la navegación */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  margin: 0 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link-animated {
+  position: relative;
+}
+
+.nav-link-animated::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link-animated:hover::after {
+  width: 70%;
+}
+
+/* Estilos para imágenes */
+.image-preview {
+  transition: all 0.3s ease;
+}
+
+.image-preview:hover {
+  opacity: 0.9;
+}
+
+/* Estilos para formularios */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilos para acordeón */
+.accordion-button:not(.collapsed) {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: var(--primary-color);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos para iconos */
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(0, 123, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon-wrapper {
+  transform: scale(1.1);
+  background-color: rgba(0, 123, 255, 0.2);
+}
+
+/* Estilos para spinners */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Estilos para las alertas */
+.alert {
+  border-radius: 0.5rem;
+}
+
+/* Estilos para los botones de acción */
+.btn-action {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Estilos para las imágenes */
+.img-thumbnail {
+  border-radius: 0.5rem;
+}
+
+/* Estilos para las tarjetas de cursos */
+.curso-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.curso-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.curso-card .card-footer {
+  background-color: transparent;
+  border-top: none;
+  margin-top: auto;
+}
+
+/* Estilos para las etiquetas de nivel */
+.nivel-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  body {
+    padding-top: 56px;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
