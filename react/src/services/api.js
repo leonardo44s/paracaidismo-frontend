@@ -1,37 +1,57 @@
-import axios from "axios"
+import api from "./api";
 
-// Crear una instancia de axios con la URL base desde variable de entorno
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL + "/api",
-})
-
-// Interceptor para añadir el token de autenticación a las solicitudes
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-},
-  (error) => {
-    return Promise.reject(error)
+const authService = {
+  // Registrar usuario
+  register: async (userData) => {
+    const response = await api.post("/auth/register", userData);
+    return response.data;
   },
-)
 
-// Interceptor para manejar errores de respuesta
-api.interceptors.response.use(
-  (response) => {
-    return response
-  },
-  (error) => {
-    // Si el error es 401 (No autorizado), redirigir al login
-    if (error.response && error.response.status === 401) {
-      localStorage.removeItem("token")
-      localStorage.removeItem("user")
-      window.location.href = "/login"
+  // Iniciar sesión
+  login: async (credentials) => {
+    const response = await api.post("/auth/login", credentials);
+    if (response.data.token) {
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
     }
-    return Promise.reject(error)
+    return response.data;
   },
-)
 
-export default api
+  // Cerrar sesión
+  logout: () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  },
+
+  // Obtener usuario actual
+  getCurrentUser: () => {
+    const userStr = localStorage.getItem("user");
+    if (!userStr) return null;
+    return JSON.parse(userStr);
+  },
+
+  // Verificar si el usuario está autenticado
+  isAuthenticated: () => {
+    return !!localStorage.getItem("token");
+  },
+
+  // Verificar si el usuario tiene un rol específico
+  hasRole: (role) => {
+    const user = authService.getCurrentUser();
+    if (!user) return false;
+    return user.rol === role;
+  },
+
+  // Obtener perfil del usuario
+  getProfile: async () => {
+    const response = await api.get("/auth/profile");
+    return response.data;
+  },
+
+  // ✅ NUEVO: Obtener el token JWT directamente
+  getToken: () => {
+    return localStorage.getItem("token");
+  },
+};
+
+export default authService;
