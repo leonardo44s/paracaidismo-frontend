@@ -1,14 +1,10 @@
-# Node.js
+# React
 node_modules/
 .env
-npm-debug.log
-package-lock.json
+build/
 .DS_Store
-
-# Logs
-logs
-*.log
-*.log.*
+npm-debug.log
+yarn-error.log
 
 # VSCode config (opcional)
 .vscode/
